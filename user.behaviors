@@ -22,16 +22,12 @@
      [(:lt.plugins.opener/set-shell-command
        :terminal
        :linux
-       ["gnome-terminal" "--working-directory" "{{path}}"])]
-
-     :lt.plugins.opener/settings
-     [(:lt.plugins.opener/set-shell-command
+       ["gnome-terminal" "--working-directory" "{{path}}"])
+      (:lt.plugins.opener/set-shell-command
        :open
        :linux
-       ["nautilus" "{{path}}"])]
-
-     :lt.plugins.opener/settings
-     [(:lt.plugins.opener/set-shell-command
+       ["nautilus" "{{path}}"])
+      (:lt.plugins.opener/set-shell-command
        :reveal
        :linux
        ["xdg-open" "{{path}}"])]
