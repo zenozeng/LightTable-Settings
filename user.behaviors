@@ -12,11 +12,24 @@
 {:+ {
      ;; The app tag is kind of like global scope. You assign behaviors that affect
      ;; all of Light Table here
-     :app [(:lt.objs.style/set-skin "dark")]
+     ;; :app [(:lt.objs.style/set-skin "dark")]
+
+     ;;      :app {"alt-x" [:show-commandbar-transient]
+     ;;            "super-x" [:show-commandbar-transient]
+     ;;            "ctrl-x o" [:tabs.next]
+     ;;            "ctrl-x ctrl-f" [:navigate-workspace-transient]
+     ;;            "ctrl-x ctrl-s" [:save]
+     ;;            "ctrl-x ctrl-w" [:save]
+     ;;            "ctrl-x s" [:save-all]
+     ;;            "ctrl-x f" [:open-file]
+     ;;            "ctrl-x k" [:tabs.close]}
 
      ;; The editor tag is applied to all editors
      :editor [:lt.objs.editor/no-wrap
-              (:lt.objs.style/set-theme "default")]
+              (:lt.objs.style/set-theme "default")
+              (:lt.plugins.emacs/activate-emacs)
+              ;;(:lt.objs.style/set-theme "base16-tomorrow-dark")
+              ]
 
      :lt.plugins.opener/settings
      [(:lt.plugins.opener/set-shell-command
@@ -37,4 +50,5 @@
 
  ;; You can use the subtract key to remove behavior that may get added by
  ;; another diff
- :- {:app []}}
+ ;; :- {:app {"ctrl-space" [:show-commandbar-transient]}}
+ }
